@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{admin/layout.html}">
+<head>
+    <title>Service</title>
+     <meta charset="UTF-8" />
+    
+</head>
+<body>
+<section layout:fragment="header">
+	<h1 >Service</h1>
+</section>
+<section layout:fragment="content">
+		<div class="container">
+		<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Liste des services
+                        </div>
+                       
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        <div >
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ajoutService">Ajout service</button> 
+                        </div><br/>
+                        <span th:utext="${successMessage}"></span>
+							<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Description</th>
+                                        <th>Type</th>
+                                        <th>Domaine</th>
+                                        <th>Fonction</th>
+                                        <th>Projet</th>
+                                        <th>Test TMA</th>
+                                        <th>Complexité</th>
+                                        <th>Opération</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="gradeC">
+                                        <td>GetCustomerDetails</td>
+                                        <td>Selection du détail d'un client</td>
+                                        <td>GetDetail</td>
+                                        <td>Coding systems</td>
+                                        <td >Customers</td>
+                                        <td>OCRE</td>
+                                        <td>OUI</td>
+                                          <td>Simple</td>
+                                        <td style="text-align:center;">
+                                        	<button class="btn btn-default" data-toggle="modal" data-target="#ajoutService"><span class = "glyphicon glyphicon-pencil" ></span></button>
+											<button class="btn btn-danger" ><span class = "glyphicon glyphicon-remove" ></span></button>
+										</td>
+                                    </tr>
+                                    <tr class="gradeC">
+                                        <td>modifyCustomer</td>
+                                        <td>Modification d'un client</td>
+                                        <td>Modify</td>
+                                        <td>Coding systems</td>
+                                        <td >Product</td>
+                                        <td>OCRE</td>
+                                        <td>OUI</td>
+                                        <td>Moyen</td>
+                                        <td style="text-align:center;">
+                                        	<button class="btn btn-default" data-toggle="modal" data-target="#ajoutService"><span class = "glyphicon glyphicon-pencil" ></span></button>
+											<button class="btn btn-danger" ><span class = "glyphicon glyphicon-remove" ></span></button>
+										</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+               <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!--Formulaire d'ajout d'un Service -->
+			<div id="ajoutService" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Ajouter un nouveau service</h4>
+			      </div>
+			      <div class="modal-body">
+				        <form autocomplete="off" action="#" method="post">
+						  <div class="form-group">
+						    <input type="text" class="form-control" id="nomService" placeholder="Nom Service">
+						   </div>
+						  <div class="form-group">
+                                            <select class="form-control">
+                                            	<option>Domaine</option>
+                                                <option>domaine1</option>
+                                                <option>domaine2</option>
+                                                <option>domaine3</option>
+                                            </select>
+                            </div>
+                            <div class="form-group">
+                                            <select class="form-control">
+                                            	<option>Fonction</option>
+                                                <option>fonction1</option>
+                                                <option>fonction2</option>
+                                                <option>fonction3</option>
+                                            </select>
+                            </div>
+                            <div class="form-group">
+                                            <select class="form-control">
+                                            	<option>Projet</option>
+                                                <option>OCRE</option>
+                                                <option>MOBILIZ</option>
+                                                <option>OCRE & Mobiliz</option>
+                                            </select>
+                            </div>
+						  <div class="form-group">
+                                            <select class="form-control">
+                                            	<option>Complexité</option>
+                                                <option>Simple</option>
+                                                <option>Moyen</option>
+                                                <option>Complexe</option>
+                                                <option>Très Complexe</option>
+                                            </select>
+                           </div>
+                           <div class="form-group">
+						   <label  class="col-sm-6 col-form-label">Test TMA</label>
+						  <label class="radio-inline">
+						      <input type="radio" name="testTMA" value="OUI">Oui
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="testTMA" value="NON">Non
+						    </label>
+						  </div>
+						  <button type="submit" class="btn btn-primary" >Enregistrer</button>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		<!--Fin formulaire d'ajout d'un Service -->
+		</div>
+		<!-- Modal  -->
+</section>
+
+</body>
+</html>

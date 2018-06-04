@@ -1,0 +1,40 @@
+#grad1 {
+    background: linear-gradient(to bottom right,#800000,#ff3333);}
+
+#logoName {
+    color : white;
+    font-family:verdana;
+    font-style: italic;
+    font-weight: bold;
+}
+html {
+	 background: rgb(255, 240, 230)
+}
+
+#page-wrapper,#wrapper {
+    background: rgb(255, 240, 230);
+    
+}
+
+html,body
+{
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+    background: #c11a1a;
+	
+    
+}
+
+a {
+    color: #f5f6f7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a.active {
+    background-color: #8c0505;
+}
+

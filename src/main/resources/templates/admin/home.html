@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{admin/layout.html}">
+
+<head>
+ <title>page d'acceuil</title>
+ 
+</head>
+
+<body>
+<section layout:fragment="header">
+	<h1 >Vision Globale</h1>
+</section>
+<section layout:fragment="content">
+  <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-globe fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">8</div>
+                                    <div>Filiales</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a th:href="@{/filiale}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Voir d&eacute;tail</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-archive fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">10</div>
+                                    <div>Domaines</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a th:href="@{/domaine}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Voir d&eacute;tail</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-book fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">36</div>
+                                    <div>Fonctions</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a th:href="@{/domaine}">
+                            <div class="panel-footer" style="color:#337ab7;">
+                                <span class="pull-left">Voir d&eacute;tail</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">138</div>
+                                    <div>Services</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a th:href="@{/afficherRef}">
+                            <div class="panel-footer">
+                                <span class="pull-left">Voir d&eacute;tail</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- bar chart  -->
+            <div class="row">
+               <div class="col-lg-12">
+            <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Activité SMG
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Filtrer
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Service</a>
+                                        </li>
+                                        <li><a href="#">Collaborateur</a>
+                                        </li>
+                                        <li><a href="#">Date</a>
+                                        </li>
+                                        <li><a href="#">Charge de travail</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        	<div class="row">
+                                 <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Area Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                               <div class="col-lg-6">
+				                    <div class="panel panel-default">
+				                        <div class="panel-heading">
+				                            Pie Chart Example
+				                        </div>
+				                        <!-- /.panel-heading -->
+				                        <div class="panel-body">
+				                            <div class="flot-chart">
+				                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+				                            </div>
+				                        </div>
+				                        <!-- /.panel-body -->
+				                    </div>
+				                    <!-- /.panel -->
+				                </div>
+				                <!-- /.col-lg-6 -->
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                        <table id="activityTable"  class="table table-bordered table-hover table-striped" style="width:100%">
+       										 <thead>
+                                                <tr>
+                                                    <th>Service</th>
+                                                    <th>Date</th>
+                                                    <th>Charge de travail</th>
+                                                    <th>Collaborateur</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>GetCustomerList</td>
+                                                    <td>10/03/2018</td>
+                                                    <td>0.5 Jour</td>
+                                                    <td>Soukaina Tsouli Faroukh</td>
+                                                </tr>
+                                             	<tr>
+                                                    <td>GetCustomerDetails</td>
+                                                    <td>20/02/2018</td>
+                                                    <td>1 Jour</td>
+                                                    <td>Ayoubn Ait Lahcen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GetCustomerBudgetDetails</td>
+                                                    <td>05/02/2018</td>
+                                                    <td>2 Jour</td>
+                                                    <td>Kanza Mouden</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GetPhoneNumberDetails</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>0.5 Jour</td>
+                                                    <td>Fatimm zehra khammar</td>
+                                                </tr>
+								    </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+           </div>
+        </div>
+            <!--/ bar chart -->
+</section>
+
+</body>
+</html>

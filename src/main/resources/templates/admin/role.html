@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{admin/layout.html}">
+<head>
+    <title>Rôle</title>
+</head>
+<body>
+<section layout:fragment="header">
+		            <h1>Rôle<button type="button" class="btn btn-success" style="float:right;" data-toggle="modal" data-target="#ajoutRole">Ajout Rôle</button></h1>
+		            
+		            
+		            
+		            
+		            <!--Formulaire d'ajout d'une fonction pour un domaine -->
+			<div id="ajoutRole" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+			
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Ajouter un nouveau role</h4>
+			      </div>
+			      <div class="modal-body">
+				        <form >
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Rôle">
+						   </div>
+						   <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Description">
+						   </div>
+						  <button type="submit" class="btn btn-primary">Enregistrer</button>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+			      </div>
+			    </div>
+			
+			  </div>
+			</div>
+		<!--Fin formulaire d'ajout d'une fonction pour un domaine -->
+		            
+		          
+		          
+		            
+		            
+	<br/>
+</section>
+	<section layout:fragment="content">
+		<div class="container">
+		<br/><br/>
+			<div class="row" style = "padding-right: 30px;padding-left: 30px;">
+                <div class="col-lg-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            Admin
+                            
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application </p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="#" class="btn btn-warning" role="button">Liste des Admins</a>
+                           <div class="pull-right">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-warning" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           Leader
+                           
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application .</p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="#" class="btn btn-primary" role="button">Liste des Leaders</a>
+                           <div class="pull-right">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-primary" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+            <br/><br/>
+            <div class="row"  style = "padding-right: 30px;padding-left: 30px;">
+            	<div class="col-lg-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            Test Designer
+                            
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application .</p>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="#" class="btn btn-danger" role="button">Liste des Test Designers</a>
+                            <div class="pull-right">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-danger" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            Senior Tester
+                            <div class="pull-right">
+                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" style="background:#8e0404;border-color: #fff0e6;"><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-primary btn-xs" id="removeFonction" style="background:#8e0404;border-color: #fff0e6;"><span class="	glyphicon glyphicon-remove"></span></button>
+                                
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application .</p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="#" class="btn btn-success" role="button">Liste des Senior Testers</a>
+                           <div class="pull-right">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-success" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                
+            </div>
+            <!-- /.row -->
+            <br/><br/>
+            <div class="row" style = "padding-right: 30px;padding-left: 30px;">
+                <div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                           Tester
+                           
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application .</p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="#" class="btn btn-primary" role="button">Liste des Testers</a>
+                           <div class="pull-right">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-primary" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            Guest
+                            
+                        </div>
+                        <div class="panel-body">
+                            <p>Le rôle administrateur permet tous les droit d'accès pour faire la gestion(Création, Modification, Lecture, Suppression) de toutes les données qui circulent dans l'application .</p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="#" class="btn btn-warning" role="button">Liste des Guests</a>
+                           <div class="pull-right">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ajoutRole" id="modifFonction" ><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-warning" id="removeFonction" ><span class="	glyphicon glyphicon-remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+		</div>
+	</section>
+
+</body>
+</html>

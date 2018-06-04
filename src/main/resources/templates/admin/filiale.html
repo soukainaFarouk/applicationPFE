@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{admin/layout.html}">
+<head>
+    <title>Filiale</title>
+     <meta charset="UTF-8" />
+</head>
+<body>
+<section layout:fragment="header">
+	<h1 >Filiale</h1>
+</section>
+<section layout:fragment="content">
+		<div class="container">
+		<!--Formulaire d'ajout d'une filiale -->
+			<div id="ajoutFiliale" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Ajouter une nouvelle Filiale</h4>
+			      </div>
+			      <div class="modal-body">
+				        <form autocomplete="off" action="#" th:action="@{/filiale}"
+					th:object="${filiale}" method="post" class="form-signin" role="form">
+							<div class="form-group">
+				                <div class="col-sm-10">
+				                    <input type="hidden" class="form-control" th:field="*{id}"/>
+				                </div>
+				           </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Nom Filiale" th:field="*{filiale_nom}">
+						   </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control"  placeholder="Pays" th:field="*{filiale_pays}">
+						  </div>
+						  <div class="form-group">
+						   <label  class="col-sm-6 col-form-label">Branche</label>
+						  <label class="radio-inline">
+						      <input type="radio" name="branche" th:field="*{filiale_branche}"  value="QUAL">QUAL
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="branche" th:field="*{filiale_branche}" value="PROD">PROD
+						    </label>
+						  </div>
+						  <div class="form-group">
+						   <label  class="col-sm-6 col-form-label">Type de la base do donn&eacute;es</label>
+						  <label class="radio-inline">
+						      <input type="radio" name="typeBDD" th:field="*{filiale_bddtype}"  value="informix">Informix
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="typeBDD" th:field="*{filiale_bddtype}" value="oracle">Oracle
+						    </label>
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Nom de la BDD" th:field="*{nom_bdd}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control"  placeholder="@IP" th:field="*{filiale_ip}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Utilisateur" th:field="*{filiale_user}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Mot de passe" th:field="*{filiale_password}">
+						  </div>
+						  <button type="submit" class="btn btn-primary">Enregistrer</button>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- ___________________________________________ -->
+			
+			<div id="editFilialeHolder">
+			<div id="editFiliale" class="modal fade" role="dialog" th:fragment="editmodal">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Editer une nouvelle Filiale</h4>
+			      </div>
+			      <div class="modal-body">
+				        <form autocomplete="off" action="#" th:action="@{/filiale}"
+					th:object="${filiale}" method="post" class="form-signin" role="form">
+							<div class="form-group">
+				                <div class="col-sm-10">
+				                    <input type="hidden" class="form-control" th:field="*{id}"/>
+				                </div>
+				           </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Nom Filiale" th:field="*{filiale_nom}">
+						   </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control"  placeholder="Pays" th:field="*{filiale_pays}">
+						  </div>
+						  <div class="form-group">
+						   <label  class="col-sm-6 col-form-label">Branche</label>
+						  <label class="radio-inline">
+						      <input type="radio" name="branche" th:field="*{filiale_branche}"  value="QUAL">QUAL
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="branche" th:field="*{filiale_branche}" value="PROD">PROD
+						    </label>
+						  </div>
+						  <div class="form-group">
+						   <label  class="col-sm-6 col-form-label">Type de la base do donn&eacute;es</label>
+						  <label class="radio-inline">
+						      <input type="radio" name="typeBDD" th:field="*{filiale_bddtype}"  value="informix">Informix
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="typeBDD" th:field="*{filiale_bddtype}" value="oracle">Oracle
+						    </label>
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Nom de la BDD" th:field="*{nom_bdd}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control"  placeholder="@IP" th:field="*{filiale_ip}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Utilisateur" th:field="*{filiale_user}">
+						  </div>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="Mot de passe" th:field="*{filiale_password}">
+						  </div>
+						  <button type="submit" class="btn btn-primary">Enregistrer</button>
+						</form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			</div>
+			
+			<!-- _______________________________________________ -->
+			</div>
+		<br/>
+    <div class="container">
+		<!--Fin formulaire d'ajout d'une filiale -->	
+<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Liste des filiales
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        <div >
+							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#ajoutFiliale">Ajout Filiale</button>
+                        </div><br/>
+			     	 <span th:utext="${successMessage}"></span>
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+								      	<th>Filiale</th>
+								        <th>Pays</th>
+								        <th>Branche</th>
+								        <th>Nom BDD</th>
+								        <th>Type BDD</th>
+								        <th>@IP</th>
+								        <th>User</th>
+								        <th>Password</th>
+								        <th>Operation</th>
+								      </tr>
+                                </thead>
+                                <tbody>
+						               <tr th:each="filiale : ${filiales}" >
+							     		<td th:text="${filiale.filiale_nom}"/>
+							     		<td th:text="${filiale.filiale_pays}"/>
+							     		<td th:text="${filiale.filiale_branche}"/>
+							     		<td th:text="${filiale.nom_bdd}"/>
+							     		<td th:text="${filiale.filiale_bddtype}"/>
+							     		<td th:text="${filiale.filiale_ip}"/>
+							     		 <td th:text="${filiale.filiale_user}"/>
+							     		<td th:text="${filiale.filiale_password}"/>
+							     		<td style="text-align:center;">
+							     		  <a  class="btn btn-default" th:onclick="'javascript:openFilialeModal(\'' + ${filiale.id} + '\');'" ><i class="fa fa-edit"></i></a>
+							     		<!--<a  class="btn btn-default" th:href="@{'/filiale/edit/' + ${filiale.id}}" ><i class="fa fa-edit"></i></a>-->
+							     		<a th:href="${'/filiale/supression/' + filiale.id}" class="btn btn-danger"><i class="fa fa-times"></i></a>
+							     		</td>
+							     		
+						          </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+</section>
+
+
+</body>
+</html>

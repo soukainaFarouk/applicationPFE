@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html 
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		 layout:decorate="~{admin/layout.html}">
+<head>
+    <title>Liste de Références</title>
+</head>
+<body>
+<section layout:fragment="header">
+	<h1 >Fiche de Référence</h1>
+	</section>
+<section layout:fragment="content">
+	<div class="container">
+	<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Rechercher la fiche de référence d'un service
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form">
+                                    	<div class="row">
+                							<div class="col-lg-6">
+	                                        <div class="form-group">
+	                                        	<label>Domaine</label>
+	                                            <select class="form-control">
+	                                            	<option>Selectionner..</option>
+	                                                <option>BDP</option>
+	                                                <option>SGBS</option>
+	                                                <option>SGCB</option>
+	                                                <option>SGCAM</option>
+	                                                <option>SGA</option>
+	                                            </select>
+	                           				</div>
+	                                        </div>
+	                                        <div class="col-lg-6">
+	                                        <div class="form-group">
+	                                        	<label>Fonction</label>
+	                                            <select class="form-control">
+	                                            	<option>Selectionner..</option>
+	                                                <option>BDP</option>
+	                                                <option>SGBS</option>
+	                                                <option>SGCB</option>
+	                                                <option>SGCAM</option>
+	                                                <option>SGA</option>
+	                                            </select>
+	                           				</div>
+	                                        </div>
+	                                        <div class="col-lg-6">
+	                                        <div class="form-group">
+	                                        	<label>Service</label>
+	                                            <select class="form-control">
+	                                            	<option>Selectionner..</option>
+	                                                <option>BDP</option>
+	                                                <option>SGBS</option>
+	                                                <option>SGCB</option>
+	                                                <option>SGCAM</option>
+	                                                <option>SGA</option>
+	                                            </select>
+	                           				</div>
+	                                        </div>
+	                                        <div class="col-lg-6">
+	                                        <div class="form-group">
+	                                        	<label>Filiale</label>
+	                                            <select class="form-control">
+	                                            	<option>Selectionner..</option>
+	                                                <option>BDP</option>
+	                                                <option>SGBS</option>
+	                                                <option>SGCB</option>
+	                                                <option>SGCAM</option>
+	                                                <option>SGA</option>
+	                                            </select>
+	                           				</div>
+	                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-lg-12" style="text-align:center;" >
+                                         <button type="submit" class="btn">Valider</button>
+                                         <button type="reset" class="btn">Annuler</button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Fiche de référence
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Balise</th>
+												<th>Table</th>
+												<th>Champ</th>
+												<th>Clé</th>
+												<th>Ctab</th>
+												<th>Même Table</th>
+												<th>Multiple</th>
+												<th>Calculable</th>
+												<th>Expression</th>
+												<th>Comparable</th>
+												<th>Antecedent</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>CodeCustomer</td>
+												<td>
+													bkcli
+												</td>
+												<td>cli</td>
+												<td style="text-align:center;">-</td>
+												<td style="text-align:center;">-</td>
+												<td>OUI</td>
+												<td>OUI</td>
+												<td>NON</td>
+												<td style="text-align:center;">-</td>
+												<td style="text-align:center;">-</td>
+												<td>Customer</td>
+											</tr>
+										</tbody>
+									</table>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+         </div>
+		
+</section>
+</body>
+</html>

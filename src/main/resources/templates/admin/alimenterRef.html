@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{admin/layout.html}">
+<head>
+<title>Alimenter La r&eacute;f&eacute;rence</title>
+
+</head>
+<body>
+	<section layout:fragment="header">
+	<h1 >Fiche de Référence</h1>
+	</section>
+	<section layout:fragment="content">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Information sur le service à alimenter
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form">
+                                    	<div class="row">
+                							<div class="col-lg-6">
+	                                        <div class="form-group">
+	                                            <label>Nom du service</label>
+	                                            <input class="form-control" placeholder="Service">
+	                                        </div>
+	                                        </div>
+	                                        <div class="col-lg-6">
+	                                        <div class="form-group">
+	                                        	<label>Filiale</label>
+	                                            <select class="form-control">
+	                                            	<option>Selectionner..</option>
+	                                                <option>BDP</option>
+	                                                <option>SGBS</option>
+	                                                <option>SGCB</option>
+	                                                <option>SGCAM</option>
+	                                                <option>SGA</option>
+	                                            </select>
+	                           				</div>
+	                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-lg-12">
+                                        <div class="form-group">
+	                                            <label>WSDL</label>
+	                                            <input class="form-control" placeholder="URL du WSDL">
+	                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-lg-12" style="text-align:center;" >
+                                         <button type="submit" class="btn">Valider</button>
+                                         <button type="reset" class="btn">Annuler</button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Alimenter la fiche de référence du service
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Balise</th>
+												<th >Table</th>
+												<th>Champ</th>
+												<th>Clé</th>
+												<th>Ctab</th>
+												<th>Même Table</th>
+												<th>Multiple</th>
+												<th>Calculable</th>
+												<th>Expression</th>
+												<th>Comparable</th>
+												<th>Antecedent</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Customer</td>
+												<td>
+												<div class="form-group">
+		                                            <select  id ="table" class="form-control">
+		                                               <option selected></option>
+		                                               <option>bkcli</option>
+													   <option>bkcom</option>
+		                                            </select>
+		                                        </div>
+												</td>
+												<td>
+												<div class="form-group">
+		                                            <select id = "champ" class="form-control">
+		                                               <option selected></option>
+		                                               <option>cli</option>
+													   <option>age</option>
+		                                            </select>
+		                                        </div>
+												</td>
+												<td>
+												<div class="form-group">
+		                                            <select id = "cle" class="form-control">
+		                                               <option selected></option>
+		                                               <option>cli</option>
+													   <option>age</option>
+		                                            </select>
+		                                        </div>
+												</td>
+												<td>
+												<div class="form-group">
+		                                            <input class="form-control" placeholder="N° Ctab">
+		                                        </div>
+												</td>
+												<td style="text-align:center;">
+												<div class="checkbox">
+												  <input type="checkbox" value="memeTab">
+												</div>
+												</td >
+												<td style="text-align:center;">
+												<div class="checkbox">
+												  <input type="checkbox" value="multiple">
+												</div>
+												</td >
+												<td style="text-align:center;">
+												<div class="checkbox">
+												  <input type="checkbox" value="calculable">
+												</div>
+												</td>
+												<td>
+												<div class="form-group">
+		                                            <input class="form-control" placeholder="Formule">
+		                                        </div>
+												</td>
+												<td style="text-align:center;">
+												<div class="checkbox">
+												  <input type="checkbox" value="actif">
+												</div>
+												</td>
+												<td>
+												<div class="form-group">
+		                                            <input class="form-control" placeholder="Balise">
+		                                        </div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+		</div>
+	</section>
+</body>
+</html>
